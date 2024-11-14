@@ -99,7 +99,7 @@ for i = 10:20%length(file_list)
         writetable(channel_data, output_file);
         disp(['Results saved to ', output_file]);
 
-        Plot the original and processed data with detected peaks
+        # Plot the original and processed data with detected peaks
         figure;
         time = (0:length(d_detrended)-1) / Fs * 1000;  % Time in ms
 
