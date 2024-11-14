@@ -28,7 +28,7 @@ function [x,y] = NP(TH,sig)
         end
     
         %if min is large enough, add to list
-        if(sig(N2P(k)) < TH*P)
+        if(sig(N2P(k)) <= TH*P)
             count = count + 1;
             x(end+1) = N2P(k);
             y(end+1) = sig(N2P(k));
