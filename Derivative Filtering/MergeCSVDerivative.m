@@ -1,5 +1,5 @@
 % Folder path where CSV files are located
-folder_path = "Output Path";
+folder_path = "Input Path";
 
 % List all CSV files in the folder
 file_list = dir(fullfile(folder_path, "*_results_4um_derivative.csv"));
@@ -21,7 +21,7 @@ for i = 1:length(file_list)
     reshaped_data = table();
 
     % Identify unique column prefixes (e.g., "Time_ms", "PosPeak", "NegPeak")
-    column_prefixes = {'Time_ms', 'PosPeak', 'NegPeak'};
+    column_prefixes = {'Time_ms', 'Amplitude', 'Width', 'Prominence'};
 
     % Loop through each prefix and flatten columns
     for j = 1:length(column_prefixes)
@@ -49,7 +49,7 @@ for i = 1:length(file_list)
 end
 
 % Define the output file name
-output_file = fullfile(folder_path, "combined_results_4um_derivate.csv");
+output_file = fullfile(folder_path, "combined_results_4um_derivative.csv");
 
 % Write the combined data to a new CSV file
 writetable(all_data, output_file);
