@@ -1,31 +1,25 @@
 # IFC-Derivative-Signal-Processing
 
-This project aims to automatically process impedance flow cytometry (IFC) raw data using a derivative-based method for peak detection. The notch filtering method has also been provided as an alternative signal processing technique for comparison.
+This repository contains MATLAB code, synthetic data generation scripts, benchmark tools, and real-time classification pipelines for the derivative-based signal processing method developed for impedance flow cytometry (IFC).
 
 ## Project Overview
 
-Impedance flow cytometry (IFC) is a powerful tool for analyzing cells or particles based on impedance signals. This project uses a derivative-based signal processing method to detect positive and negative peaks in the IFC data, allowing for accurate characterization of cell or particle passage events. The method is designed to handle real-world data, which often includes noise from various sources. 
+The derivative-based method offers a lightweight, real-time alternative to traditional frequency-domain filtering for analyzing IFC signals. It enables robust detection, segmentation, and reconstruction of cellular or particle events under various noise and experimental conditions. This repository includes:
 
-The provided MATLAB code processes data files, detects peaks, and calculates peak-to-peak times to evaluate cell or particle characteristics.
++ Synthetic signal generator with configurable noise parameters
 
-## Main Features
++ Derivative-based signal processing and bi-Gaussian reconstruction
 
-- **Derivative Method for Peak Detection**: A derivative-based method is used to identify positive and negative peaks in the raw data stream. This method is particularly effective in handling noisy signals and provides accurate timing information for each peak event.
-- **Notch Filtering Method**: In addition to the derivative method, a notch filtering method is available, allowing comparison between different processing techniques.
-- **Automated Processing of Multiple Files**: The code processes multiple `.mat` data files stored in a specified folder, extracts relevant data for each file, and saves the results to CSV files.
-- **Data Visualization**: The code generates plots of both the original and processed signals with detected peaks, enabling visual verification of the results.
++ Traditional and notch-filter-based processing for comparison
 
-## Code Structure
++ Real-time classification pipeline with feature extraction and trained model
 
-### Main Script: `PeakDetectionDerivative.m`, `PeakDetectionNotch.m`
++ Benchmark results and performance plots
 
-The main MATLAB script performs the following steps:
++ Experimental data validation scripts
 
-1. **Load Data**: Loads raw data from `.mat` files in a specified folder.
-2. **Preprocessing**: Detrends and normalizes the data to improve signal quality (derivative method does not require this step).
-3. **Threshold Setting**: Sets a noise threshold to filter out unwanted peaks.
-4. **Peak Detection**: Applies the derivative-based method to detect positive and negative peaks.
-5. **Time Conversion**: Converts detected peak indices to time in milliseconds.
-6. **Noise Handling**: Ignores files with excessive noise and skips saving if the peak count exceeds a specified threshold.
-7. **Result Saving**: Saves the peak-to-peak times and amplitudes to CSV files for each channel and file.
-8. **Data Visualization**: Plots the original signal and processed data with detected peaks for visual inspection.
+## Contact
+For questions or collaborations, please contact:
+**Dr. Leilei Shi**
+College of Charleston
+Email: shil@cofc.edu
